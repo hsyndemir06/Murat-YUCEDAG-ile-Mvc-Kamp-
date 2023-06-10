@@ -1,0 +1,21 @@
+﻿@using EntityLayerr.Concrete
+@model List<Content>
+@{
+    ViewBag.Title = "GetAllContent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>GetAllContent</h2>
+
+@using (Html.BeginForm("GetAllContent", "Content", FormMethod.Post))
+{
+    <p>
+        aranacak kelime:@Html.TextBox("p")
+        <input type="submit" value="ara" />
+    </p>
+}
+
+@foreach (var x in Model)
+{
+    <p>@x.ContentValue </p>
+}
